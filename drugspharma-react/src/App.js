@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-
 import { Posts } from "./components/Posts";
 
 function App() {
@@ -16,6 +15,8 @@ function App() {
   //retorno
   return (
     <section className="container">
+      <p>pinto</p>
+      <center><img src="drugspharmalogovip.png" alt="DrugsPharma" /></center>
       <Posts posts={Produtos} />
     </section>
   );
