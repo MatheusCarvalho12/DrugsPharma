@@ -1,13 +1,21 @@
 import "./styles.css";
 
-export const PostCard = ({ title, cover, body, id }) => (
-  <div className="post">
-    <img src={cover} alt={title} />
-    <div className="post-content">
-      <h2>
-        {title} {id}
-      </h2>
-      <p>{body}</p>
+export const PostCard = ({ name, img, description, price }) => (
+  <div class="cards">
+    <div class="card">
+      <div class="overlay">
+        <button class="button">Adicionar ao Carrinho</button>
+      </div>
+      <div class="image">
+        <img src={img} alt={name} />
+      </div>
+      <div class="details">
+        <div class="name">
+          {name}
+          <div class="description">{description}</div>
+        </div>
+        <div class="price">R${price}</div>
+      </div>
     </div>
   </div>
 );

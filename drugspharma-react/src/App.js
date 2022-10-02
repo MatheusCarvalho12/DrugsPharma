@@ -1,32 +1,23 @@
-import { Component } from "react";
-
-import "./styles.css";
+import { useState, useEffect } from "react";
 
 import { Posts } from "./components/Posts";
-import { loadPosts } from "./utils/load-posts";
 
-export class Home extends Component {
-  state = {
-    posts: [],
-  };
+function App() {
+  // UseState
+  const [Produtos, setProdutos] = useState([]);
 
-  async componentDidMount() {
-    await this.loadPosts();
-  }
+  // UseEffect
+  useEffect(() => {
+    fetch("http://wsl.local:8080/listar")
+      .then((retorno) => retorno.json())
+      .then((retorno_convertido) => setProdutos(retorno_convertido));
+  }, []);
 
-  loadPosts = async () => {
-    const postsAndPhotos = await loadPosts();
-    this.setState({ posts: postsAndPhotos });
-  };
-
-  render() {
-    const { posts } = this.state;
-
-    return (
-      <section className="container">
-        <Posts posts={posts} />
-      </section>
-    );
-  }
+  //retorno
+  return (
+    <section className="container">
+      <Posts posts={Produtos} />
+    </section>
+  );
 }
-export default Home;
+export default App;

@@ -7,11 +7,12 @@ export const Posts = ({ posts }) => (
     {posts.map((post) => (
       <PostCard
         key={post.id}
-        title={post.title}
-        body={post.body}
-        id={post.id}
-        cover={post.cover}
+        name={post.name}
+        description={post.description}
+        price={post.price}
+        img={post.img}
       />
     ))}
   </div>
 );
+      
