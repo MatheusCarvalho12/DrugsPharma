@@ -13,37 +13,41 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.api.drugspharmaapi.modelo.ProdutoModelo;
 import br.com.api.drugspharmaapi.modelo.RespostaModelo;
+import br.com.api.drugspharmaapi.servico.APIcadastrar;
 import br.com.api.drugspharmaapi.servico.ApiServico;
 
 @RestController
 @CrossOrigin(origins = "*")
 public class ApiControle {
-    
+
     @Autowired
     private ApiServico ps;
 
+    @Autowired
+    private APIcadastrar ps2;
+
     @DeleteMapping("/remover/{codigo}")
-    public ResponseEntity<RespostaModelo> remover(@PathVariable long codigo){
+    public ResponseEntity<RespostaModelo> remover(@PathVariable long codigo) {
         return ps.remover(codigo);
     }
 
     @PutMapping("/alterar")
-    public ResponseEntity<?> alterar(@RequestBody ProdutoModelo pm){
-        return ps.cadastrarAlterar(pm, "alterar");
+    public ResponseEntity<?> alterar(@RequestBody ProdutoModelo pm) {
+        return ps2.cadastrarAlterar(pm, "alterar");
     }
 
     @PostMapping("/cadastrar")
-    public ResponseEntity<?> cadastrar(@RequestBody ProdutoModelo pm){
-        return ps.cadastrarAlterar(pm, "cadastrar");
+    public ResponseEntity<?> cadastrar(@RequestBody ProdutoModelo pm) {
+        return ps2.cadastrarAlterar(pm, "cadastrar");
     }
 
     @GetMapping("/listar")
-    public Iterable<ProdutoModelo> listar(){
+    public Iterable<ProdutoModelo> listar() {
         return ps.listar();
     }
-    
+
     @GetMapping("/")
-    public String rota(){
+    public String rota() {
         return "API de produtos funcionando!";
     }
 

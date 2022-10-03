@@ -23,4 +23,5 @@ public class ProdutoModelo {
   private String description;
   private double price;
   private String img;
+  private int stock;
 }

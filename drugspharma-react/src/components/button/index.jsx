@@ -1,17 +1,12 @@
 import "./styles.css";
-
-import { Component } from "react";
-
-export class ButtonCart extends Component {
-  addCart({ numero }) {
-    console.log(`numero ${numero}`);
+export function ButtonCart(id) {
+  function addCart({ id, name, price, img, stock }) {
+    alert(`possui ${stock} items no estoque`);
   }
 
-  render() {
-    return (
-      <button className="button" onClick={this.addCart}>
-        Adicionar ao Carrinho
-      </button>
-    );
-  }
+  return (
+    <button className="button" onClick={() => addCart(id)}>
+      ver informações do produto
+    </button>
+  );
 }

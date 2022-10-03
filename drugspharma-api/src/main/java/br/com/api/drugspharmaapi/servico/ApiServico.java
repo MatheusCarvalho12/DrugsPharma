@@ -23,33 +23,6 @@ public class ApiServico {
     return pr.findAll();
   }
 
-  // Método para cadastrar ou alterar produtos
-  public ResponseEntity<?> cadastrarAlterar(ProdutoModelo pm, String string) {
-
-    if (pm.getName().equals("")) {
-      rm.setMensagem("O nome do produto é obrigatório!");
-      return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
-    } else if (pm.getImg().equals("")) {
-      rm.setMensagem("A imagem do produto é obrigatória!");
-      return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
-    } else if (pm.getDescription().equals("")) {
-      rm.setMensagem("A descrição do produto é obrigatória!");
-      return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
-    } else if (pm.getPrice() == (0.0)) {
-      rm.setMensagem("O preço do produto é obrigatório!");
-      return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
-    } else if (pm.getId() == (0)) {
-      rm.setMensagem("O id do produto é obrigatório!");
-      return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
-    } else {
-      if (string.equals("cadastrar")) {
-        return new ResponseEntity<ProdutoModelo>(pr.save(pm), HttpStatus.CREATED);
-      } else {
-        return new ResponseEntity<ProdutoModelo>(pr.save(pm), HttpStatus.OK);
-      }
-    }
-  }
-
   // Método para remover produtos
   public ResponseEntity<RespostaModelo> remover(long codigo) {
 

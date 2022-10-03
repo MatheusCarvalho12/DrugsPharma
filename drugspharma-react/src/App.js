@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { Posts } from "./components/Posts";
 
+import drugspharmalogovip from "./imgs/drugspharmalogovip.png";
+
+
 function App() {
   // UseState
   const [Produtos, setProdutos] = useState([]);
@@ -15,8 +18,9 @@ function App() {
   //retorno
   return (
     <section className="container">
-      <p>pinto</p>
-      <center><img src="drugspharmalogovip.png" alt="DrugsPharma" /></center>
+      <center>
+        <img src={drugspharmalogovip} alt="DrugsPharma" />
+      </center>
       <Posts posts={Produtos} />
     </section>
   );
