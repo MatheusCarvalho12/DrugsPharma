@@ -1,5 +1,6 @@
 # DrugsPharma
-
+<h3>Inventário de uma farmácia</h3>
+<h2>Tecnologias utilizadas:</h2>
 <div align="center">
   <img align="center" width="16%" height="155px" alt="mysql" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" />
   <img align="center" width="16%" height="155px" alt="java" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" />
